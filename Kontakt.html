@@ -1,0 +1,209 @@
+<!DOCTYPE HTML>
+<!--
+	Helios by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title id="title"></title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="no-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header">
+
+					<!-- Inner -->
+						<div class="inner">
+							<header>
+							</header>
+						</div>
+
+					<!-- Nav -->
+					<nav id="nav">	
+						<ul>
+							<li><a href="index.html"class="scrolly"id="home">Home</a></li>
+							<li><a href="index.html#main" class="scrolly" id="o nas">O nás</a></li>
+							<li><a href="index.html#job-offers" class="scrolly"id="volitelne">Nabídka práce</a></li>
+							<li><a href="#footer" class="scrolly"id="kontakt">Kontakt</a></li>
+						</ul>
+					</nav>
+
+			</div>
+
+			<!-- Main -->
+				<div class="wrapper style1">
+
+					<div class="container">
+						<article id="main" class="special">
+							<header>
+								<h2 style="margin-top: -50px;"><a href="#">Kontakt:</a></h2>
+											<!-- Footer -->
+				
+
+							</header>
+
+						<hr />
+
+						<div class="container" id="email-form">
+        <div class="contact-section row">
+            <article class="contact-info col-4 col-12-mobile special">
+                <header>
+                    <h2>Kontaktujte nás přes email:</h2>
+
+                </header>
+            </article>
+
+            <article class="contact-form col-8 col-12-mobile special">
+                <header>
+								<div class="contact-form">
+										<form id="contactForm">
+											<label for="name">Jméno:</label>
+											<input type="text" id="name" name="name" required style="margin-bottom: 30px; display: block; width: 100%;">
+											
+											<label for="email">Váš e-mail:</label>
+											<input type="email" id="email" name="email" required style="margin-bottom: 30px; display: block; width: 100%;">
+											
+											<label for="subject">Předmět:</label>
+											<input type="text" id="subject" name="subject" required style="margin-bottom: 30px; display: block; width: 100%;">
+											
+											<label for="message">Zpráva:</label>
+											<textarea id="message" name="message" rows="4" required style="margin-bottom: 30px; display: block; width: 100%;"></textarea>
+											
+											<button type="submit" style="display: block; margin: 30px auto 0;">Odeslat</button>
+										</form>
+									</div>
+
+                    </form>
+                </header>
+            </article>
+        </div>
+    </div>
+					</div>
+
+				</div>
+
+		<!-- Footer -->
+		<div id="footer">
+			<div class="container">
+				<div class="row">
+
+					<!-- Sídlo -->
+						<section class="col-4 col-12-mobile">
+							<header>
+
+							</header>
+							<ul class="divided">
+								<li>
+									<article class="nadpis">
+									Sídlo:
+									</article>
+								</li>
+								<li>
+									<article class="kontakt">
+										Zatis AP s.r.o.  
+										<br>
+										Závodní 504/14, 
+										<br>
+										735 06 Karviná  
+									</article>
+								</li>
+								
+							</ul>
+						</section>
+
+					<!-- Administrativa -->
+					<section class="col-4 col-12-mobile">
+						<header>
+
+						</header>
+						<ul class="divided">
+							
+						</ul>
+					</section>
+
+					<!-- Kontakt -->
+					<section class="col-4 col-12-mobile">
+						<header>
+
+						</header>
+						<ul class="divided">
+							<li>
+								<article class="nadpis">
+									Kontakt:
+								</article>
+							</li>
+							<li>
+								<article class="kontakt">
+									Ing. Zbončák Petr  
+									<br>
+									tel: 774540925
+									
+									<br>
+									e-mail: zboncak@zatisap.cz 
+
+								</article>
+							</li>
+							
+						</ul>
+					</section>
+
+				</div>
+				<hr />
+
+				<div class="row">
+					<div class="col-12" style="text-align: center;">
+			
+							<!-- Copyright -->
+							<div class="copyright" style="clear: both;">
+									<ul class="menu">
+											<li>&copy; Zatis AP</li>
+											<li>Design: <a href=#>Kupcik</a></li>
+									</ul>
+							</div>
+					</div>
+			</div>
+					</div>
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+	e.preventDefault();
+
+	const formData = new FormData(this);
+
+	fetch("form.php", {
+		method: "POST",
+		body: formData
+	})
+	.then(response => response.text())
+	.then(result => {
+		alert("✅ Zpráva byla úspěšně odeslána.");
+		document.getElementById("contactForm").reset();
+	})
+	.catch(error => {
+		alert("❌ Chyba při odesílání zprávy.");
+		console.error(error);
+	});
+});
+</script>
+
+
+	</body>
+</html>
