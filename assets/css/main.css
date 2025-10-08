@@ -84,7 +84,7 @@ input, select, textarea {
 
 	body {
 		background: #e9e9e9;
-		color: #5b5b5b;
+		color: #0e3763;
 		font-size: 15pt;
 		line-height: 1.85em;
 		font-family: 'Source Sans Pro', sans-serif;
@@ -127,7 +127,7 @@ input, select, textarea {
 
 	h2 {
 		font-size: 2.85em;
-		padding-top: 70px;
+		padding-top: 60px;
 	}
 
 	#features h2 {
@@ -169,7 +169,7 @@ input, select, textarea {
 	}
 
 		a:hover {
-			color: #ef8376;
+			color: #f5c518;
 			border-bottom-color: transparent;
 		}
 
@@ -1782,7 +1782,7 @@ input, select, textarea {
 		}
 
 	footer {
-		margin: 2.5em 0 0 0;
+		margin: 0em 0 0 0;
 	}
 
 /* Image */
@@ -2191,8 +2191,8 @@ input, select, textarea {
 }
 
 .wrapper.style2 {
-	padding-top: 0;
-	margin-bottom: 50px;
+	padding-top: 50px;
+	margin-bottom: 0px;
 }
 
 .table-container {
@@ -2943,7 +2943,7 @@ body { padding-top: 70px; }
 		position: relative;
 		overflow: hidden;
 		padding: 6em 0 6em 0;
-		background: #2b252c;
+		background:#08223d;
 		color: #fff;
 		padding-top: 50px;
 		padding-bottom: 10px;
@@ -3704,230 +3704,310 @@ body { padding-top: 70px; }
 			}
 	}
 
-	/* === Contact Form & Map Section === */
-
-.contact-section {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 2rem;
-	margin-top: 2rem;
-	align-items: stretch;
+/* =========================
+   HERO (logo/overlay)
+========================= */
+.hero-intro { position: relative; min-height: 200px; }
+.hero-intro .overlay { position: absolute; inset: 0; z-index: 1; }
+.hero-logo {
+  display: none;             /* desktop skryté */
+  position: absolute; inset: 0; z-index: 2;
+  align-items: center; justify-content: center;
+  pointer-events: none; text-align: center;
 }
-
-/* Levý blok: kontakty + formulář */
-.contact-info,
-.contact-map {
-	background: #f9f9f9;
-	padding: 2rem;
-	border-radius: 15px;
-	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-	flex: 1 1 45%;
-	min-height: 850px;
-	display: flex;
-	flex-direction: column;
-}
-
-/* Nadpisy (nepoužívají se, ale zůstávají pro případné rozšíření) */
-.contact-info h2,
-.contact-map h2 {
-	margin-bottom: 1rem;
-	font-size: 1.5em;
-	color: #333;
-}
-
-/* Kontaktní údaje vedle sebe */
-.contact-details {
-	display: flex;
-	justify-content: center;
-	gap: 2em;
-	flex-wrap: wrap;
-	margin-bottom: 2em;
-	line-height: 1.5;
-}
-
-.contact-details p {
-	margin: 0;
-}
-
-.contact-details a {
-	color: inherit;
-	text-decoration: underline;
-}
-
-.contact-info form {
-	flex-grow: 1;
-	display: flex;
-	flex-direction: column;
-}
-
-.contact-info form label {
-	font-weight: bold;
-	margin-top: 1rem;
-	display: block;
-	color: #444;
-}
-
-.contact-info form input,
-.contact-info form textarea {
-	width: 100%;
-	padding: 10px;
-	margin-top: 5px;
-	border: 1px solid #ccc;
-	border-radius: 10px;
-	box-sizing: border-box;
-	font-family: inherit;
-}
-
-.contact-info form button {
-	margin-top: auto;
-	padding: 0.75rem 2rem;
-	border: none;
-	background-color: #0066cc;
-	color: white;
-	font-size: 1rem;
-	border-radius: 10px;
-	cursor: pointer;
-	transition: background-color 0.3s ease;
-}
-
-.contact-info form button:hover {
-	background-color: #004c99;
-}
-
-/* Mapa */
-.contact-map iframe {
-	flex-grow: 1;
-	width: 100%;
-	border: none;
-	height: 100%;
-	border-radius: 15px;
-}
-
-/* Odkazy v kontaktech */
-.contact-inline a,
-.contact-details a {
-	color: #0066cc;
-	text-decoration: none;
-	font-weight: 500;
-}
-
-.contact-inline a:hover,
-.contact-details a:hover {
-	text-decoration: underline;
-}
-
-/* Responsivní úprava */
-@media screen and (max-width: 768px) {
-	.contact-section {
-		flex-direction: column;
-	}
-
-	.contact-info,
-	.contact-map {
-		min-height: auto;
-	}
-}
-
-/* hero musí být relativní kvůli absolutnímu pozicování loga */
-.hero-intro {
-  position: relative;
-  min-height: 200px; /* klidně uprav */
-}
-
-/* výchozí: na desktopu logo v hero neschováme  */
-.hero-logo { 
-  display: none;               /* skryté defaultně (desktop) */
-  position: absolute;
-  inset: 0;                    /* top:0; right:0; bottom:0; left:0 */
-  z-index: 2;                  /* nad overlayem */
-  display: none;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;        /* neblokuje kliky na menu */
-  text-align: center;
-}
-
 .hero-logo img {
-  width: 300px;                /* mobilní velikost, uprav dle potřeby */
-  height: auto;
-  opacity: 0.98;
+  width: 300px; height: auto; opacity: .98;
   filter: drop-shadow(0 2px 6px rgba(0,0,0,.25));
 }
+@media (max-width: 736px){ .hero-logo { display: flex; } }
 
-/* overlay nech pod logem */
-.hero-intro .overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-}
-
-/* zobraz logo v hero jen na mobilu */
-@media (max-width: 736px) {
-  .hero-logo { display: flex; }
-}
-
-/* --- Služby: stack karet --- */
+/* =========================
+   SLUŽBY – karty
+========================= */
 .services .container { max-width: 1100px; }
-
-.services-stack {
-  display: grid;
-  gap: clamp(1rem, 2.5vw, 1.75rem);
-}
-
-/* --- Služby: karty – typografie & barvy --- */
-.service-card {
-  position: relative;
-  border-radius: 16px;
+.services-stack { display: grid; gap: clamp(1rem, 2.5vw, 1.75rem); }
+.service-card{
+  position: relative; border-radius:16px;
   padding: clamp(1.4rem, 3vw, 2rem);
   background-image:
-    linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)),
+    linear-gradient(rgba(255,255,255,.85), rgba(255,255,255,.85)),
     var(--bg);
-  background-size: cover, cover;
-  background-position: center, center;
-  background-repeat: no-repeat, no-repeat;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-  overflow: hidden;
-  border: 1px solid rgba(14,55,99,0.08);
+  background-size: cover; background-position: center; background-repeat: no-repeat;
+  box-shadow: 0 8px 20px rgba(0,0,0,.08);
+  overflow: hidden; border:1px solid rgba(14,55,99,.08);
 }
-
-.service-card h3 {
-  display: flex;
-  align-items: center;
-  gap: .6rem;
-  margin: 0 0 .9rem 0;
-  color: #0e3763;                         /* brand modrá */
-  font-size: clamp(1.35rem, 2.8vw, 1.85rem);
-  font-weight: 800;
-  line-height: 1.25;
+.service-card h3{
+  display:flex; align-items:center; gap:.6rem;
+  margin:0 0 .9rem 0; color:#0e3763;
+  font-size: clamp(1.35rem, 2.8vw, 1.85rem); font-weight:800; line-height:1.25;
 }
-
-.service-card h3 i { color: #0e3763; }
-
-/* Text v kartě – větší, jednotná barva, lepší řádkování */
-.service-card p {
-  margin: 0 0 .9rem 0;
-  color: #0e3763;                         /* sjednocená barva textu */
-  font-size: clamp(1.05rem, 1.2vw, 1.2rem);
-  line-height: 1.65;
-  letter-spacing: 0.005em;
+.service-card h3 i{ color:#0e3763; }
+.service-card p{
+  margin:0 0 .9rem 0; color:#0e3763;
+  font-size: clamp(1.05rem, 1.2vw, 1.2rem); line-height:1.65; letter-spacing:.005em;
 }
-
-/* Úvodní zvýraznění v odstavci */
-.service-card p strong {
-  color: #0e3763;
-  font-weight: 800;
-}
-
-
-/* Responsivita: zachovat pěknou čitelnost a vzduch */
-@media (max-width: 900px) {
-  .services { padding: 2.2em 0 !important; } /* trochu méně prostoru nahoře/dole */
+.service-card p strong{ color:#0e3763; font-weight:800; }
+@media (max-width: 900px){
+  .services { padding: 2.2em 0 !important; }
   .service-card { padding: 1.1rem; }
 }
 
-/* Pokud je nav fixed (70px), dodejme mezeru nahoře obsahu */
-.services-page body,
-body.services-page { padding-top: 70px; } /* jen kdyby nebylo globálně */
+/* =========================
+   KONTAKT – Karta (obecně)
+========================= */
+.office-card, .contact-frame {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, .08);
+  padding: 1.25rem;
+  color: #0e3763;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* =========================
+   KARTA – Nadpis
+========================= */
+.office-card__title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.6rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+.office-card__title i {
+  font-size: 1.1rem;
+}
+
+/* =========================
+   KARTA – Obsahové řádky
+========================= */
+.office-card__row {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+  margin: 0.4rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.office-card__row i {
+  margin-top: 0.2rem;
+  line-height: 1;
+  width: 1.1rem;
+  text-align: center;
+}
+
+/* =========================
+   KARTA – Odkazy
+========================= */
+.office-card__link,
+a[href^="tel:"],
+a[href^="mailto:"] {
+  color: #0e3763;
+  font-weight: 700;
+  text-decoration: none !important;
+  border-bottom: 0 !important;
+  box-shadow: none !important;
+}
+
+/* =========================
+   KARTA – Oddělovač a podnadpisy
+========================= */
+.office-card__divider {
+  height: 2px;
+  background: #f5c518;
+  width: 100%;
+  margin: 1rem 0 0.8rem;
+}
+.office-card__subtitle {
+  margin: 0.2rem 0 0.5rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* =========================
+   KARTA – Výpis služeb / položek
+========================= */
+.office-card__services {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.office-card__services li {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.25rem 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.office-card .plus {
+  color: #f5c518;
+  font-weight: 900;
+  width: 0.9rem;
+  display: inline-block;
+}
+
+.office-card__services a {
+  text-decoration: none;
+  border-bottom: 0;
+  box-shadow: none;
+  font-weight: inherit;
+}
+
+/* =========================
+   FORMULÁŘ + MAPA v jednom framu
+========================= */
+.contact-frame {
+  margin-top: 2rem;
+  margin-bottom: 2rem; /* rozumná mezera od footeru */
+  padding: 2rem; /* rovnoměrný prostor kolem obsahu */
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+  height: 530px;
+}
+
+/* Dvojice vedle sebe */
+.contact-pair {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+/* Každý sloupec zabere polovinu */
+.contact-pair > div {
+  flex: 1 1 50%;
+  box-sizing: border-box;
+}
+
+/* Formulářové pole */
+.contact-frame input[type="text"],
+.contact-frame input[type="email"],
+.contact-frame textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #dfe6ee;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #0e3763;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+/* Mapa */
+.contact-map {
+  width: 100%;
+  height: 460px;
+  min-height: 350px;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
+/* Mobilní zobrazení – sloupce pod sebe */
+@media (max-width: 768px) {
+  .contact-pair {
+    flex-direction: column;
+  }
+
+  .contact-pair > div {
+    flex: 1 1 100%;
+  }
+
+  .contact-map {
+    min-height: 300px;
+  }
+}
+
+
+/* =========================
+   SEKCE Kontakt – Nadpis
+========================= */
+#contact > header {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .office-card__title {
+    font-size: 1.2rem;
+  }
+  .office-card__row {
+    font-size: 0.98rem;
+  }
+  .contact-map {
+    min-height: 300px;
+    border-radius: 12px;
+  }
+}
+
+/* =========================
+   Obchodní rejstřík + Platební údaje – pod sebou
+========================= */
+.registry-section {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.registry-block {
+  margin-bottom: 2rem;
+  color: #0e3763;
+}
+
+.registry-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #0e3763;
+}
+
+.registry-title i {
+  color: #0e3763;
+  font-size: 1.2rem;
+}
+
+.registry-block p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.office-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+  padding: 1.25rem;
+  color: #0e3763;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+#contact {
+  padding-bottom: 4rem;
+}
+
+
 
 
 
